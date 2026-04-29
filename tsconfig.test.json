@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "composite": true,
     "types": ["jest"],
     "module": "ESNext",
     "target": "ES2022",
@@ -9,5 +10,5 @@
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true
   },
-  "include": ["tests/**/*.ts", "tests/**/*.tsx"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts", "tests/**/*.ts", "tests/**/*.tsx"]
 }
