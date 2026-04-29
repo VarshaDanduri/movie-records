@@ -1,6 +1,6 @@
 import type { Movie } from "../src/interfaces/movie";
 import { MovieEditor } from "../src/components/MovieEditor";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 
 describe("MovieEditor Component", () => {
     const mockMovie: Movie = {
@@ -37,6 +37,21 @@ describe("MovieEditor Component", () => {
         const title = screen.getByDisplayValue("The Test Movie");
 
         expect(title).toBeInTheDocument();
-        
+
+    });
+
+    test("edits name and saves", () => {
+        const editButton = screen.getAllByRole("button", {name: /edit/i});
+
+        fireEvent.click(editButton[0]);
+        const titleName = screen.getByRole("textbox", {name: /title/i});
+        fireEvent.change(titleName, { target: { value: 'Hello world' } });
+        const saveButton = screen.getByRole("button", {name: /save/i});
+        fireEvent.click(saveButton);
+
+        const title = screen.getByDisplayValue("Hello World");
+        expect(title).toBeInTheDocument();
+
+
     });
 });

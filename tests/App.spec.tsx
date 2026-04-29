@@ -64,10 +64,10 @@ describe("App Component", () => {
         //only press the first one
         fireEvent.click(editMovie[0]);
 
-        const deleteButton = screen.getByRole('button', {name: /edit/i});
-        fireEvent.click(deleteButton);
+        const deleteButton = screen.getAllByRole('button', {name: /edit/i});
+        fireEvent.click(deleteButton[0]);
 
-        const finalCount = screen.queryAllByRole('lititem').length;
+        const finalCount = screen.queryAllByRole('listitem').length;
         expect(finalCount).toBe(initialCount - 1);
     });
 
