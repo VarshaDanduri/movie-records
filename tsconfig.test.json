@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "types": ["jest"],
+    "module": "ESNext",
+    "target": "ES2022",
+    "jsx": "react-jsx",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true
+  },
+  "include": ["tests/**/*.ts", "tests/**/*.tsx"]
+}
