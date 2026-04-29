@@ -37,5 +37,6 @@ describe("MovieEditor Component", () => {
         const title = screen.getByDisplayValue("The Test Movie");
 
         expect(title).toBeInTheDocument();
+        
     });
 });
